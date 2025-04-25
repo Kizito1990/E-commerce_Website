@@ -1,0 +1,30 @@
+{% extends 'store/base.html' %}
+{% block content %}
+
+<div class="container my-5">
+  <h2 class="mb-4 text-success">Cashew Grades & Prices</h2>
+  <table class="table table-success table-striped table-hover">
+      <thead>
+        <tr>      
+          <th scope="col">No</th>
+          <th scope="col">Grade</th>
+          <th scope="col">Price (₦)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for grade in grades %}
+        <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>{{ grade.name }}</td>
+          <td>{{ grade.price_per_kg }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="3">No grades available at the moment.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'store/base.html'%}
+
+
+
+    
+{% block content %}
+
+
+<div class="container my-5">
+  <h2 class="text-center text-success mb-4">Our Promo Videos</h2>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {% for video in videos %}
+    <div class="col">
+      <div class="card shadow-sm h-100">
+        <video class="card-img-top" controls poster="{{ video.thumbnail.url }}">
+          <source src="{{ video.video.url }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="card-body">
+          <h5 class="card-title">{{ video.title }}</h5>
+          <p class="card-text"><small class="text-muted">Uploaded on {{ video.uploaded_at|date:"F d, Y" }}</small></p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}

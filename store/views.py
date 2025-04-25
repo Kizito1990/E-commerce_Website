@@ -14,7 +14,8 @@ from django import forms
 from django.db.models import Q
 import json
 from cart.cart import Cart
-from .models import Contact
+from .models import Contact, Grades, PromoVideo, Picture
+
 
 def index(request):
 	return render(request, 'store/index.html')	
@@ -207,10 +208,17 @@ def site_contact(request):
 
 #List the grades of different Cashew Nuts
 def grades(request):
-	contacts = Contact.objects.all()
-	
-	return render(request, 'store/nav.html', {'contacts':contacts})
+	grades = Grades.objects.all()
+	return render(request, 'store/grade.html', {'grades':grades})
 
 
 
+def video(request):
+	videos = PromoVideo.objects.all()
+	return render(request, 'store/video.html',  {'videos': videos})	
+
+
+def picture(request):
+    pictures = Picture.objects.all()
+    return render(request, 'store/picture.html', {'pictures': pictures})
 

@@ -94,12 +94,30 @@ class Contact(models.Model):
 		return self.my_address
 	
 class Grades(models.Model):
-	grade = models.CharField(max_length=100)
+	name = models.CharField(max_length=100)
 	price_per_kg = models.DecimalField(decimal_places=2, max_digits=12)
 
 	#@daverobb2011
 	class Meta:
-		verbose_name_plural = 'Grade'
+		verbose_name_plural = 'Grades'
 
 	def __str__(self):
-		return self.grade
+		return f"{self.grade} - {self.price_per_kg}"
+
+
+class PromoVideo(models.Model):
+    title = models.CharField(max_length=255)
+    video = models.FileField(upload_to='videos/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+class Picture(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='product_images/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
