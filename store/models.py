@@ -18,16 +18,16 @@ class Profile(models.Model):
 	old_cart = models.CharField(max_length=200, blank=True, null=True)
 
 	def __str__(self):
-		return self.user.username
+		return f"{self.user.username}'s Profile"
 
 # Create a user Profile by default when user signs up
-def create_profile(sender, instance, created, **kwargs):
-	if created:
-		user_profile = Profile(user=instance)
-		user_profile.save()
+#def create_profile(sender, instance, created, **kwargs):
+	#if created:
+		#user_profile = Profile(user=instance)
+		#user_profile.save()
 
 # Automate the profile thing
-post_save.connect(create_profile, sender=User)
+#post_save.connect(create_profile, sender=User)
 
 
 # Categories of Products

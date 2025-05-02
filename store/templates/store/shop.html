@@ -1,0 +1,45 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+
+<!-- Header -->
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Shop in style</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Discover amazing products with us</p>
+        </div>
+    </div>
+</header>
+
+<!-- Products Section -->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+
+        <!-- Div to load products dynamically -->
+        <div id="product-container">
+            {% include 'store/products_partial.html' %}
+        </div>
+
+    </div>
+</section>
+
+<!-- AJAX Pagination Script -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).on('click', '.page-link-btn', function(e){
+    e.preventDefault();
+    var url = $(this).attr('href');
+
+    $.ajax({
+        url: url,
+        type: 'GET',
+        success: function(data){
+            $('#product-container').html($(data).find('#product-container').html());
+            window.scrollTo({ top: 0, behavior: 'smooth' });  // Smooth scroll to top after loading
+        }
+    });
+});
+</script>
+
+{% endblock %}

@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from .models import Product, Category, Profile
@@ -54,8 +55,8 @@ def update_info(request):
 			shipping_form.save()
 
 			messages.success(request, "Your Info Has Been Updated!!")
-			return redirect('store/index')
-		return render(request, "update_info.html", {'form':form, 'shipping_form':shipping_form})
+			return redirect('index')
+		return render(request, "store/update_info.html", {'form':form, 'shipping_form':shipping_form})
 	else:
 		messages.success(request, "You Must Be Logged In To Access That Page!!")
 		return redirect('store/index')
@@ -95,7 +96,7 @@ def update_user(request):
 			login(request, current_user)
 			messages.success(request, "User Has Been Updated!!")
 			return redirect('index')
-		return render(request, "update_user.html", {'user_form':user_form})
+		return render(request, "store/update_user.html", {'user_form':user_form})
 	else:
 		messages.success(request, "You Must Be Logged In To Access That Page!!")
 		return redirect('index')
@@ -103,7 +104,7 @@ def update_user(request):
 
 def category_summary(request):
 	categories = Category.objects.all()
-	return render(request, 'category_summary.html', {"categories":categories})	
+	return render(request, 'store/category_summary.html', {"categories":categories})	
 
 def category(request, foo):
 	# Replace Hyphens with Spaces
@@ -113,25 +114,33 @@ def category(request, foo):
 		# Look Up The Category
 		category = Category.objects.get(name=foo)
 		products = Product.objects.filter(category=category)
-		return render(request, 'category.html', {'products':products, 'category':category})
+		return render(request, 'store/category.html', {'products':products, 'category':category})
 	except:
 		messages.success(request, ("That Category Doesn't Exist..."))
-		return redirect('index')
+		return redirect('product')
 
 
-def product_update(request,pk):
+def product(request,pk):
 	product = Product.objects.get(id=pk)
-	return render(request, 'store/product_detail.html', {'product':product})
+	return render(request, 'store/product.html', {'product':product})
 
-def product(request):
-	products = Product.objects.all()
-	return render(request, 'store/product.html', {'products':products})
+def shop(request):
+    products = Product.objects.all()
+    paginator = Paginator(products, 8)  # Correctly indented
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        return render(request, 'store/products_partial.html', {'page_obj': page_obj})
+    
+    return render(request, 'store/shop.html', {'page_obj': page_obj})
 
 
-
+#About function starts here
 def about(request):
 	return render(request, 'store/about.html')	
 
+#Login func starts here
 def login_user(request):
 	if request.method == "POST":
 		username = request.POST['username']

@@ -44,7 +44,7 @@
         {% block content %}
 
         {% endblock %}
-<!-- Footer Start -->
+<!-- Footer Start 
 <div class="container-fluid bg-light mt-5 py-5">
     <div class="container pt-5">
         <div class="row g-5">
@@ -108,11 +108,93 @@
         </div>
     </div>
 </div>
+ Footer End -->
+ <!-- Main footer starts here -->
+    <!-- Footer Start -->
+<div class="container-fluid py-5" style="background-color: #d4edda;">
+    <div class="container">
+        <div class="row g-5 text-center text-md-start">
+
+            <!-- Contact Section -->
+            <div class="col-md-4">
+                <h5 class="text-uppercase mb-4">Contact Us</h5>
+                <p class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i>6 Alhaja Nimota Street, Mile 12, Lagos</p>
+                <p class="mb-2"><i class="bi bi-envelope-fill me-2"></i>isimiriezemah@gmail.com</p>
+                <p class="mb-2"><i class="bi bi-telephone-fill me-2"></i>+2348132847584 / +2348068524244</p>
+
+                <!-- Social Media Icons -->
+                <div class="d-flex justify-content-center justify-content-md-start mt-3">
+                    <a class="btn btn-outline-dark btn-floating m-1" href="#"><i class="bi bi-facebook"></i></a>
+                    <a class="btn btn-outline-dark btn-floating m-1" href="#"><i class="bi bi-instagram"></i></a>
+                    <a class="btn btn-outline-dark btn-floating m-1" href="https://wa.me/2348068524244?text=Hello!%20I%20am%20interested%20in%20your%20products."><i class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-4">
+                <h5 class="text-uppercase mb-4">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a class="footer-link" href="{% url 'index' %}">Home</a></li>
+                    <li><a class="footer-link" href="{% url 'about' %}">About Us</a></li>
+                    <li><a class="footer-link" href="{% url 'service' %}">Services</a></li>
+                    <li><a class="footer-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Info Links -->
+            <div class="col-md-4">
+                <h5 class="text-uppercase mb-4">Info</h5>
+                <ul class="list-unstyled">
+                    <li><a class="footer-link" href="#">Terms & Conditions</a></li>
+                    <li><a class="footer-link" href="#">Privacy Policy</a></li>
+                    <li><a class="footer-link" href="#">FAQs</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <hr class="my-4">
+
+        <div class="text-center small text-muted">
+            &copy; 2025 <strong>Isimiriezemah Enterprises</strong> | Designed by <strong>Kizito</strong>
+        </div>
+    </div>
+</div>
 <!-- Footer End -->
 
+<!-- Back to Top Button -->
+<a href="#" class="btn btn-success btn-lg rounded-circle back-to-top position-fixed bottom-0 end-0 m-4" style="z-index: 1000;">
+    <i class="bi bi-arrow-up"></i>
+</a>
+
+<!-- Custom Footer CSS -->
+<style>
+.footer-link {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-link:hover {
+    color: #198754; /* Bootstrap green */
+    transform: translateX(5px);
+}
+
+.btn-floating {
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-floating:hover {
+    background-color: #198754;
+    color: #fff;
+    transform: scale(1.1);
+}
+</style>
+
+<!-- Main footer Ends here -->
 
 <!-- Back to Top -->
-<a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
 <!-- JavaScript Libraries -->
@@ -125,6 +207,41 @@
 <!-- Template Javascript -->
 <script src="{% static 'js/main.js' %}"></script>
 
+<!--whatsapp starts here-->
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/2348068524244?text=Hello!%20I%20am%20interested%20in%20your%20products." 
+   class="whatsapp-float" 
+   target="_blank" 
+   title="Chat with us on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+</a>
+
+<!-- WhatsApp Button Custom CSS -->
+<style>
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    line-height: 60px;
+    transition: all 0.4s ease-in-out;
+}
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+}
+</style>
+
+<!--whatsapp ends here-->
 </body>
 
 </html>
