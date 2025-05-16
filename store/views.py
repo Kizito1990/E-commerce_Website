@@ -16,6 +16,9 @@ from django.db.models import Q
 import json
 from cart.cart import Cart
 from .models import Contact, Grades, PromoVideo, Picture
+from .forms import ContactForm
+from .models import ContactMessage
+
 
 
 def index(request):
@@ -217,9 +220,17 @@ def site_contact(request):
 
 #List the grades of different Cashew Nuts
 def grades(request):
-	grades = Grades.objects.all()
-	return render(request, 'store/grade.html', {'grades':grades})
+    query = request.GET.get('q')
+    grades = Grades.objects.filter(name__icontains=query) if query else Grades.objects.all()
 
+    paginator = Paginator(grades, 6)  # Show 6 items per page
+    page_number = request.GET.get('page')
+    grades = paginator.get_page(page_number)
+
+    return render(request, 'store/grade.html', {
+        'grades': grades,
+        'query': query,
+    })
 
 
 def video(request):
@@ -231,3 +242,15 @@ def picture(request):
     pictures = Picture.objects.all()
     return render(request, 'store/picture.html', {'pictures': pictures})
 
+
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            ContactMessage.objects.create(**form.cleaned_data)  # Save to DB
+            messages.success(request, "Your message has been sent successfully.")
+            return redirect('contact')
+    else:
+        form = ContactForm()
+    return render(request, 'store/contact.html', {'form': form})

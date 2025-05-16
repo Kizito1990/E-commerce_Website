@@ -2,6 +2,7 @@ from django.db import models
 import datetime
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
+from PIL import Image
 
 
 # Create Customer Profile
@@ -94,15 +95,26 @@ class Contact(models.Model):
 		return self.my_address
 	
 class Grades(models.Model):
-	name = models.CharField(max_length=100)
-	price_per_kg = models.DecimalField(decimal_places=2, max_digits=12)
+    name = models.CharField(max_length=100)
+    price_per_kg = models.DecimalField(decimal_places=2, max_digits=12)
+    image = models.ImageField(upload_to='grades/', null=True, blank=True)
 
-	#@daverobb2011
-	class Meta:
-		verbose_name_plural = 'Grades'
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if self.image:
+            img_path = self.image.path
+            img = Image.open(img_path)
+            if img.size != (100, 100):
+                img = img.convert('RGB')
+                img = img.resize((100, 100), Image.ANTIALIAS)
+                img.save(img_path)
 
-	def __str__(self):
-		return f"{self.grade} - {self.price_per_kg}"
+    class Meta:
+		
+        verbose_name_plural = 'Grades'
+
+    def __str__(self):
+        return f"{self.price_per_kg}"
 
 
 class PromoVideo(models.Model):
@@ -121,3 +133,14 @@ class Picture(models.Model):
 
     def __str__(self):
         return self.name
+
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=15)
+    address = models.CharField(max_length=255)
+    email = models.EmailField()
+    message = models.TextField()
+    submitted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Message from {self.name}"

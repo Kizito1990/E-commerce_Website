@@ -1,30 +1,72 @@
 {% extends 'store/base.html' %}
+{% load static %}
+
 {% block content %}
-
 <div class="container my-5">
-  <h2 class="mb-4 text-success">Cashew Grades & Prices</h2>
-  <table class="table table-success table-striped table-hover">
-      <thead>
-        <tr>      
-          <th scope="col">No</th>
-          <th scope="col">Grade</th>
-          <th scope="col">Price (₦)</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for grade in grades %}
-        <tr>
-          <th scope="row">{{ forloop.counter }}</th>
-          <td>{{ grade.name }}</td>
-          <td>{{ grade.price_per_kg }}</td>
-        </tr>
-        {% empty %}
-        <tr>
-          <td colspan="3">No grades available at the moment.</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-  </table>
-</div>
+  <h2 class="mb-4 text-success text-center">Cashew Grades & Prices</h2>
 
+  <!-- Search Bar -->
+  <form method="get" action="" class="mb-4">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search grade name..." value="{{ query|default:'' }}">
+      <button class="btn btn-success" type="submit">Search</button>
+    </div>
+  </form>
+
+  <!-- Card Grid -->
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+    {% for grade in grades %}
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        {% if grade.image %}
+        <img src="{{ grade.image.url }}" alt="{{ grade.name }}" style="width: 100px; height: 100px; object-fit: cover;" class="mx-auto d-block my-2">
+        {% else %}
+          <img src="{% static 'images/placeholder.jpg' %}" class="card-img-top" alt="No image" style="height: 200px; object-fit: cover;">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ grade.name }}</h5>
+          <p class="card-text"><strong>Price:</strong> ₦{{ grade.price_per_kg }}</p>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <div class="col">
+      <p class="text-muted text-center">No grades match your search.</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Pagination -->
+  {% if grades.has_other_pages %}
+  <nav aria-label="Page navigation" class="mt-4">
+    <ul class="pagination justify-content-center">
+      {% if grades.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?{% if query %}q={{ query }}&{% endif %}page={{ grades.previous_page_number }}">Previous</a>
+      </li>
+      {% else %}
+      <li class="page-item disabled">
+        <span class="page-link">Previous</span>
+      </li>
+      {% endif %}
+
+      {% for num in grades.paginator.page_range %}
+      <li class="page-item {% if grades.number == num %}active{% endif %}">
+        <a class="page-link" href="?{% if query %}q={{ query }}&{% endif %}page={{ num }}">{{ num }}</a>
+      </li>
+      {% endfor %}
+
+      {% if grades.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?{% if query %}q={{ query }}&{% endif %}page={{ grades.next_page_number }}">Next</a>
+      </li>
+      {% else %}
+      <li class="page-item disabled">
+        <span class="page-link">Next</span>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+  {% endif %}
+</div>
 {% endblock %}

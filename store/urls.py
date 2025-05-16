@@ -1,5 +1,6 @@
 from django.urls import path
 from .import views
+from .views import contact_view
 
 urlpatterns = [
     path("", views.index, name = "index"),
@@ -20,4 +21,5 @@ urlpatterns = [
     path('category_summary/', views.category_summary, name='category_summary'),
     path('search/', views.search, name='search'),
     path('admin_contact/', views.site_contact, name='admin_contact'),
+    path('contact/', contact_view, name='contact'),
 ]

@@ -65,9 +65,17 @@
         <div class="navbar-nav ms-auto py-0">
             <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
             <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
-            <a href="{% url 'service' %}" class="nav-item nav-link">Service</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Other Products</a>
+                <div class="dropdown-menu m-0">
+                    <a href="{% url 'picture' %}" class="dropdown-item">Cashew Nuts</a>
+                    <a href="{% url 'video' %}" class="dropdown-item">Groundnuts</a>
+                    <a href="{% url 'grades' %}" class="dropdown-item">Grades</a>
+                </div>
+                
+            </div>
             <a href="{% url 'register' %}" class="nav-item nav-link">Register</a>
-            <a href="{% url 'login' %}" class="nav-item nav-link">Login</a>
+           
             
             <a href="{% url 'shop' %}" class="nav-item nav-link">Shop</a>
             <div class="nav-item dropdown">
