@@ -1,0 +1,115 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premium Honey - Cashew Commerce</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf3;
+      color: #333;
+    }
+
+    header {
+      background-color: #c58f35;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .text-section {
+      flex: 1 1 50%;
+    }
+
+    .text-section h2 {
+      color: #8b661e;
+    }
+
+    .image-section {
+      flex: 1 1 45%;
+      max-width: 450px;
+    }
+
+    .image-section img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background-color: #c58f35;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image-section {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Premium Natural Honey</h1>
+    <p>Pure, Raw, and Naturally Sourced from Enugu State</p>
+  </header>
+
+  <div class="container">
+    <div class="text-section">
+      <h2>Nature’s Finest, Delivered Worldwide</h2>
+      <p>
+        Our <strong>premium honey</strong> is harvested from the lush forests and farms of <strong>Enugu State, Nigeria</strong> — where bees feed on natural floral nectar, producing rich, unprocessed honey packed with nutrients and natural sweetness.
+      </p>
+      <p>
+        Free from additives and chemicals, our honey is 100% raw, filtered only to remove debris while preserving its enzymes, antioxidants, and medicinal properties. Whether for consumption, retail, skincare, or health applications, our honey guarantees unmatched quality.
+      </p>
+      <p>
+        We offer a range of packaging options for wholesale buyers, retail distribution, or direct doorstep delivery. No matter the quantity, our logistics system allows us to ship across continents — safely, quickly, and affordably.
+      </p>
+      <p>
+        Partner with us for authentic Nigerian honey, trusted by customers and businesses worldwide for its purity, taste, and origin. Let’s bring the best of Enugu to your doorstep.
+      </p>
+    </div>
+
+    <div class="image-section">
+      <img src="{% static 'img/honey.jpeg' %}" alt="Premium Honey">
+    </div>
+  </div>
+
+  <footer>
+    
+  </footer>
+
+</body>
+</html>
+
+{% endblock %}

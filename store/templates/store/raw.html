@@ -1,0 +1,88 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raw Cashews - Cashew Commerce</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #fefdf9;
+      color: #333;
+    }
+    header {
+      background-color: #d6ba89;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 30px;
+    }
+    .text-content {
+      flex: 1 1 55%;
+    }
+    .image-content {
+      flex: 1 1 40%;
+    }
+    .image-content img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    footer {
+      background-color: #d6ba89;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Raw Cashews</h1>
+    <p>Premium raw cashews sourced directly from farms across Nigeria</p>
+  </header>
+
+  <div class="container">
+    <div class="text-content">
+      <h2>Pure, Unprocessed, and Naturally Nutritious</h2>
+      <p>
+        At Cashew Commerce, our **raw cashews** are sourced directly from cashew plantations spread across Nigeria’s fertile regions. We partner with local farmers and cooperatives to ensure that we obtain only the highest quality raw cashew nuts at harvest time. These nuts are unprocessed and packed with all their natural nutrients, offering you the best foundation for food processing, snack production, or export-grade cashew refinement.
+      </p>
+      <p>
+        Raw cashew nuts are the initial form of the nut before it is roasted, shelled, and packaged. These nuts have a hard outer shell that contains a caustic oil and must be carefully processed to obtain the edible kernel inside. We deliver the raw nuts in their shell form, perfect for buyers who wish to process or roast them themselves, maintaining control over quality and flavor profiles.
+      </p>
+      <p>
+        Whether you're an agro-processor, exporter, or industrial buyer, we can supply raw cashews in any quantity—container loads, bulk sacks, or custom shipments. We have the logistics infrastructure to distribute across Nigeria, West Africa, and internationally, offering global buyers seamless access to premium Nigerian cashew.
+      </p>
+      <p>
+        With our transparent supply chain, quality inspection, and commitment to fair trade, you can trust Cashew Commerce as your reliable source for raw cashew procurement.
+      </p>
+    </div>
+
+    <div class="image-content">
+      <img src="{% static 'img/raw1.jpg' %}" alt="Raw Cashew Nut in Shell">
+    </div>
+  </div>
+
+  
+</body>
+</html>
+
+
+{% endblock %}

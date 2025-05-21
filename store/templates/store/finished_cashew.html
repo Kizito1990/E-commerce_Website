@@ -1,0 +1,179 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Processed Cashew - Cashew Commerce</title>
+  <style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f6f1;
+    color: #333;
+  }
+
+  header {
+    background-color: #a47c48;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .text-section {
+    flex: 1 1 50%;
+  }
+
+  .text-section h2 {
+    color: #6a4e2f;
+  }
+
+  .carousel {
+    flex: 1 1 45%;
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .slides {
+    display: flex;
+    height: 100%;
+    width: 300%;
+    transition: transform 0.6s ease;
+  }
+
+  .slides img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .controls {
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+
+  .controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  footer {
+    background-color: #a47c48;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 50px;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .carousel {
+      max-width: 100%;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+  <header>
+    <h1>Final Processed Cashew</h1>
+    <p>Premium, edible cashews — available worldwide in retail and wholesale packages</p>
+  </header>
+
+  <div class="container">
+    <div class="text-section">
+      <h2>Premium Quality Cashew, Ready to Eat</h2>
+      <p>
+        Our final processed cashew nuts are clean, crisp, and perfectly roasted — ready to be enjoyed straight out of the pack. These nuts are the result of careful sourcing, expert shelling, precision drying, and hygienic packaging to deliver a nut that’s not just nutritious but irresistibly delicious.
+      </p>
+      <p>
+        Yoriyorii Cashew Nuts supplies processed cashews in retail-sized packs, bulk wholesale bags, and custom-labeled packages — all delivered to your doorstep anywhere in the world. Whether you're a supermarket, a food processor, a snack brand, or just a lover of high-quality cashews, we’ve got you covered.
+      </p>
+      <p>
+        Our cashews are known for their purity, creamy texture, and premium grade — free from preservatives, additives, or artificial flavoring. We offer various grades (WW240, WW320, etc.), roasted or raw kernels, salted or unsalted, and can even tailor the packaging to suit your market.
+      </p>
+      <p>
+        Experience the excellence of Nigerian cashew, processed and packed to global standards. Quality you can taste. Service you can trust.
+      </p>
+    </div>
+
+    <div class="carousel">
+      <div class="slides" id="slides">
+        <img src="{% static 'img/f1.jpeg' %}" alt="Roasted Cashew">
+        <img src="{% static 'img/f2.jpeg' %}" alt="Cashew Packaged">
+        <img src="{% static 'img/f3.jpeg' %}" alt="Cashew Nuts">
+        <img src="{% static 'img/sale1.png' %}" alt="Cashew Nuts">
+      </div>
+      <div class="controls">
+        <button onclick="prevSlide()">&#10094;</button>
+        <button onclick="nextSlide()">&#10095;</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    
+  </footer>
+
+  <script>
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      const slides = document.getElementById('slides');
+      const totalSlides = slides.children.length;
+      if (index >= totalSlides) currentIndex = 0;
+      else if (index < 0) currentIndex = totalSlides - 1;
+      else currentIndex = index;
+      slides.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+    }
+
+    function nextSlide() {
+      showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentIndex - 1);
+    }
+
+    setInterval(nextSlide, 5000);
+  </script>
+
+</body>
+</html>
+
+
+{% endblock %}

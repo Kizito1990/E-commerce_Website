@@ -1,0 +1,114 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premium Kuli-Kuli - Cashew Commerce</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fcf8f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #bd7b3e;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .text-section {
+      flex: 1 1 50%;
+    }
+
+    .text-section h2 {
+      color: #7a4d1e;
+    }
+
+    .image-section {
+      flex: 1 1 45%;
+      max-width: 450px;
+    }
+
+    .image-section img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background-color: #bd7b3e;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image-section {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Premium Kuli-Kuli</h1>
+    <p>Traditional Taste, Global Reach</p>
+  </header>
+
+  <div class="container">
+    <div class="text-section">
+      <h2>Authentic, Nutritious & Irresistibly Crunchy</h2>
+      <p>
+        At <strong>Yoriyorii Cashew Nut</strong>, we are proud to offer high-quality <strong>Kuli-Kuli</strong> — a traditional West African snack made from groundnuts, carefully processed and deep-fried to achieve a bold, crunchy texture and rich flavor.
+      </p>
+      <p>
+        Our Kuli-Kuli is produced in hygienic facilities, using only premium groundnuts with no additives or preservatives. It's rich in protein, perfectly seasoned, and packed with taste that reflects the heart of Nigerian heritage.
+      </p>
+      <p>
+        Whether you need bulk shipments, retail-ready packs, or customized packaging, we deliver across continents — fast and fresh. From snack distributors and supermarkets to African stores abroad, our logistics team ensures timely and safe delivery of your order in any quantity.
+      </p>
+      <p>
+        Experience a snack that is not only delicious, but also meaningful — premium Kuli-Kuli, sourced and crafted with care, and shipped to your doorstep anywhere in the world.
+      </p>
+    </div>
+
+    <div class="image-section">
+      <img src="{% static 'img/kuli.jpeg' %}" alt="Premium Kuli-Kuli">
+    </div>
+  </div>
+
+  <footer>
+    
+  </footer>
+
+</body>
+</html>
+
+{% endblock %}

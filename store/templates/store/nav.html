@@ -78,10 +78,11 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Products</a>
           <ul class="dropdown-menu">
-            <li><a href="{% url 'picture' %}" class="dropdown-item">Cashew Nuts</a></li>
-            <li><a href="{% url 'video' %}" class="dropdown-item">Groundnuts</a></li>
-            <li><a href="{% url 'grades' %}" class="dropdown-item">Kuli-kuli</a></li>
-            <li><a href="{% url 'grades' %}" class="dropdown-item">Plantain-chips</a></li>
+            <li><a href="{% url 'index' %}" class="dropdown-item">Cashew Nuts</a></li>
+            <li><a href="{% url 'groundnut' %}" class="dropdown-item">Groundnuts</a></li>
+            <li><a href="{% url 'kuli' %}" class="dropdown-item">Kuli-kuli</a></li>
+            <li><a href="{% url 'plantain' %}" class="dropdown-item">Plantain-chips</a></li>
+            <li><a href="{% url 'honey' %}" class="dropdown-item">Honey</a></li>
           </ul>
         </li>
 
@@ -99,10 +100,10 @@
         <li class="nav-item dropdown d-none d-md-block">
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Category</a>
           <ul class="dropdown-menu">
-            <li><a href="#" class="dropdown-item">Raw Cashew</a></li>
-            <li><a href="#" class="dropdown-item">Processed Raw Cashew</a></li>
-            <li><a href="#" class="dropdown-item">Processed Cashew</a></li>
-            <li><a href="#" class="dropdown-item">Premium Cashew</a></li>
+            <li><a href="{% url 'raw' %}" class="dropdown-item">Raw Cashew</a></li>
+            <li><a href="{% url 'processed' %}" class="dropdown-item">Processed Raw Cashew</a></li>
+            <li><a href="{% url 'finished' %}" class="dropdown-item">Processed Cashew</a></li>
+            
           </ul>
         </li>
 
@@ -126,10 +127,10 @@
             <li><a href="{% url 'processing' %}" class="dropdown-item">Processing & Packaging</a></li>
             <li><hr class="dropdown-divider"></li>
             <li class="dropdown-header text-muted">Category</li>
-            <li><a href="{% url 'picture' %}" class="dropdown-item">Raw Cashew</a></li>
-            <li><a href="{% url 'picture' %}" class="dropdown-item">Processed Raw Cashew</a></li>
-            <li><a href="{% url 'picture' %}" class="dropdown-item">Processed Cashew</a></li>
-            <li><a href="{% url 'picture' %}" class="dropdown-item">Premium Cashew</a></li>
+            <li><a href="{% url 'raw' %}" class="dropdown-item">Raw Cashew</a></li>
+            <li><a href="{% url 'processed' %}" class="dropdown-item">Processed Raw Cashew</a></li>
+            <li><a href="{% url 'finished' %}" class="dropdown-item">Processed Cashew</a></li>
+            
             <li><hr class="dropdown-divider"></li>
             <li class="dropdown-header text-muted">Gallery</li>
             <li><a href="{% url 'picture' %}" class="dropdown-item">Pictures</a></li>

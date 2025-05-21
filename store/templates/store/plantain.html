@@ -1,0 +1,114 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premium Plantain Chips - Cashew Commerce</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfaf6;
+      color: #333;
+    }
+
+    header {
+      background-color: #d2a857;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .text-section {
+      flex: 1 1 50%;
+    }
+
+    .text-section h2 {
+      color: #8a6c2e;
+    }
+
+    .image-section {
+      flex: 1 1 45%;
+      max-width: 450px;
+    }
+
+    .image-section img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background-color: #d2a857;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image-section {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Premium Plantain Chips</h1>
+    <p>Delicious, Crunchy & Fresh — Delivered Worldwide</p>
+  </header>
+
+  <div class="container">
+    <div class="text-section">
+      <h2>Delight in Every Crunch</h2>
+      <p>
+        Our <strong>plantain chips</strong> are made from freshly harvested, hand-selected plantains and fried to golden perfection using the best vegetable oils. Whether you prefer sweet or salted, thin-cut or thick-crunch, our chips are loved for their natural flavor, crispiness, and freshness.
+      </p>
+      <p>
+        We offer both retail packs and bulk supplies — perfect for supermarkets, convenience stores, snack brands, and food distributors. Each pack is carefully sealed to maintain that signature crunch and long shelf life.
+      </p>
+      <p>
+        We handle international shipping with ease, offering reliable logistics that deliver your order — in any quantity — to your location, whether you're in Africa, Europe, North America, or beyond.
+      </p>
+      <p>
+        Experience the taste of Nigeria’s favorite snack — pure, premium, and professionally packaged. Partner with us today for plantain chips that sell themselves.
+      </p>
+    </div>
+
+    <div class="image-section">
+      <img src="{% static 'img/chip.jpeg' %}" alt="Premium Plantain Chips">
+    </div>
+  </div>
+
+  <footer>
+   
+  </footer>
+
+</body>
+</html>
+{% endblock %}

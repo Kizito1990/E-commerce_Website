@@ -1,0 +1,110 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premium Bottled Groundnut - Cashew Commerce</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f6f1;
+      color: #333;
+    }
+
+    header {
+      background-color: #8d6748;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .text-section {
+      flex: 1 1 55%;
+    }
+
+    .text-section h2 {
+      color: #6a4e2f;
+    }
+
+    .image-section {
+      flex: 1 1 40%;
+      max-width: 400px;
+    }
+
+    .image-section img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+    }
+
+    footer {
+      background-color: #8d6748;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Premium Bottled Groundnut</h1>
+    <p>Freshly roasted, hygienically bottled, and distributed globally</p>
+  </header>
+
+  <div class="container">
+    <div class="text-section">
+      <h2>High-Quality Groundnut, Perfectly Bottled</h2>
+      <p>
+        At <strong>Yoriyorii Cashew Nuts</strong>, we proudly offer Nigeria’s finest <strong>premium bottled groundnuts</strong>, processed with care and bottled for freshness. Our groundnuts are hand-picked, expertly roasted to perfection, and hygienically packed into sealed bottles for maximum shelf life and taste.
+      </p>
+      <p>
+        Whether you’re a retailer, wholesaler, or just a fan of delicious crunchy groundnuts, we supply in any quantity — from small bottle packs to bulk shipments — delivered <strong>anywhere in the world</strong>.
+      </p>
+      <p>
+        Our product is perfect for supermarkets, online stores, export distributors, gift packs, or resale. We maintain strict quality controls and can also provide <strong>custom labeling</strong> and <strong>private branding</strong> upon request.
+      </p>
+      <p>
+        Enjoy the taste of pure, protein-rich Nigerian groundnuts — bottled, branded, and brought right to your doorstep.
+      </p>
+    </div>
+
+    <div class="image-section">
+      <img src="{% static 'img/nuts.jpeg' %}" alt="Premium Bottled Groundnut">
+    </div>
+  </div>
+
+  <footer>
+   
+  </footer>
+
+</body>
+</html>
+
+{% endblock %}

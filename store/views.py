@@ -259,7 +259,27 @@ def contact_view(request):
 def export(request):
     return render(request, 'store/export.html')
 
+def raw(request):
+    return render(request, 'store/raw.html' )
 
+def processed(request):
+    return render(request, 'store/processed.html' )
+
+def groundnut(request):
+    return render(request, 'store/groundnut.html' )
+
+def kuli(request):
+    return render(request, 'store/kuli.html' )
+
+def honey(request):
+    return render(request, 'store/honey.html' )
+
+
+def plantain(request):
+    return render(request, 'store/plantain.html' )
+
+def finish(request):
+    return render(request, 'store/finished_cashew.html' )
 
 def sales(request):
     return render(request, 'store/sales.html' )
