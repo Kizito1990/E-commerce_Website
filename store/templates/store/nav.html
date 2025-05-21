@@ -1,4 +1,5 @@
  <!-- Navigation-->
+{% load static %}
 
 
  {% if contacts %}
@@ -51,42 +52,118 @@
 <!--navbar testing Start -->
 
 
-<!--navbar testing Start -->
-             
-<!-- Topbar End -->
- <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-    <a href="index.html" class="navbar-brand ms-lg-5">
-        <h1 class="m-0 text-uppercase text-dark"><i class="bi bi-shop fs-1 text-primary me-3"></i>Cashew Factory</h1>
+<!-- Topbar / Navbar -->
+<nav class="navbar navbar-expand-md bg-white navbar-light shadow-sm py-3">
+  <div class="container-fluid px-3">
+    <!-- Brand with logo -->
+    <a href="index.html" class="navbar-brand d-flex align-items-center ms-md-4" style="max-width: 100%;">
+      <img src="{% static 'img/logo.png' %}" alt="Logo" class="me-2" style="height: 40px; width: auto;">
+      <h2 class="m-0 text-uppercase text-dark d-flex align-items-center flex-wrap" style="font-size: 1.25rem;">
+        <span class="text-wrap">Yoriyorii Nuts Factory</span>
+      </h2>
     </a>
+
+    <!-- Toggler -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- Menu -->
     <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto py-0">
-            <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
-            <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Other Products</a>
-                <div class="dropdown-menu m-0">
-                    <a href="{% url 'picture' %}" class="dropdown-item">Cashew Nuts</a>
-                    <a href="{% url 'video' %}" class="dropdown-item">Groundnuts</a>
-                    <a href="{% url 'grades' %}" class="dropdown-item">Grades</a>
-                </div>
-                
-            </div>
-            <a href="{% url 'register' %}" class="nav-item nav-link">Register</a>
-           
-            
-            <a href="{% url 'shop' %}" class="nav-item nav-link">Shop</a>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Gallery</a>
-                <div class="dropdown-menu m-0">
-                    <a href="{% url 'picture' %}" class="dropdown-item">Pictures</a>
-                    <a href="{% url 'video' %}" class="dropdown-item">Videos</a>
-                    <a href="{% url 'grades' %}" class="dropdown-item">Grades</a>
-                </div>
-                
-            </div>
+      <ul class="navbar-nav ms-auto py-0">
+        <li class="nav-item"><a href="{% url 'index' %}" class="nav-link active">Home</a></li>
+        <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+
+        <!-- Products (Always visible) -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Products</a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'picture' %}" class="dropdown-item">Cashew Nuts</a></li>
+            <li><a href="{% url 'video' %}" class="dropdown-item">Groundnuts</a></li>
+            <li><a href="{% url 'grades' %}" class="dropdown-item">Kuli-kuli</a></li>
+            <li><a href="{% url 'grades' %}" class="dropdown-item">Plantain-chips</a></li>
+          </ul>
+        </li>
+
+        <!-- Hidden on mobile: Services -->
+        <li class="nav-item dropdown d-none d-md-block">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'export' %}" class="dropdown-item">Export</a></li>
+            <li><a href="{% url 'sales' %}" class="dropdown-item">Sale</a></li>
+            <li><a href="{% url 'processing' %}" class="dropdown-item">Processing & Packaging</a></li>
+          </ul>
+        </li>
+
+        <!-- Hidden on mobile: Category -->
+        <li class="nav-item dropdown d-none d-md-block">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Category</a>
+          <ul class="dropdown-menu">
+            <li><a href="#" class="dropdown-item">Raw Cashew</a></li>
+            <li><a href="#" class="dropdown-item">Processed Raw Cashew</a></li>
+            <li><a href="#" class="dropdown-item">Processed Cashew</a></li>
+            <li><a href="#" class="dropdown-item">Premium Cashew</a></li>
+          </ul>
+        </li>
+
+        <!-- Hidden on mobile: Gallery -->
+        <li class="nav-item dropdown d-none d-md-block">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Gallery</a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'picture' %}" class="dropdown-item">Pictures</a></li>
+            <li><a href="{% url 'video' %}" class="dropdown-item">Videos</a></li>
+            <li><a href="{% url 'grades' %}" class="dropdown-item">Grades</a></li>
+          </ul>
+        </li>
+
+        <!-- Mobile-only "More" dropdown -->
+        <li class="nav-item dropdown d-md-none">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">More</a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header text-muted">Services</li>
+            <li><a href="{% url 'export' %}" class="dropdown-item">Export</a></li>
+            <li><a href="{% url 'sales' %}" class="dropdown-item">Sale</a></li>
+            <li><a href="{% url 'processing' %}" class="dropdown-item">Processing & Packaging</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li class="dropdown-header text-muted">Category</li>
+            <li><a href="{% url 'picture' %}" class="dropdown-item">Raw Cashew</a></li>
+            <li><a href="{% url 'picture' %}" class="dropdown-item">Processed Raw Cashew</a></li>
+            <li><a href="{% url 'picture' %}" class="dropdown-item">Processed Cashew</a></li>
+            <li><a href="{% url 'picture' %}" class="dropdown-item">Premium Cashew</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li class="dropdown-header text-muted">Gallery</li>
+            <li><a href="{% url 'picture' %}" class="dropdown-item">Pictures</a></li>
+            <li><a href="{% url 'video' %}" class="dropdown-item">Videos</a></li>
+            <li><a href="{% url 'grades' %}" class="dropdown-item">Grades</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!-- Responsive Tweaks -->
+<style>
+  /* Adjust nav-link spacing for mid-size screens */
+  @media (min-width: 768px) and (max-width: 1199.98px) {
+    .navbar-nav .nav-link {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
+
+  /* Prevent overflow on small devices */
+  @media (max-width: 576px) {
+    .navbar-brand h2 {
+      font-size: 1rem;
+    }
+    .navbar-brand img {
+      height: 32px;
+    }
+  }
+</style>
+
+
             {% if user.is_authenticated %}
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profile</a>
@@ -108,15 +185,6 @@
       
     {% endif %}
 
-<div>
-    <form class="d-flex">
 
-        <a href="{% url 'cart_summary' %}" class="btn btn-outline-dark"><i class="bi-cart-fill me-1"></i>
-            Cart
-<span class="badge bg-dark text-white ms-1 rounded-pill" id="cart_quantity">{{ cart|length }}
-
-</span></a>
-            </form>
-        </div>
 </nav>
         

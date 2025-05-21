@@ -15,12 +15,12 @@
     <div class="carousel-inner">
         <!-- Slide 1 -->
         <div class="carousel-item active">
-            <div class="container-fluid bg-success py-5 mb-5 hero-header" style="background-image: url('/static/img/back1.jpg'); background-size: cover; background-position: center;">
+            <div class="container-fluid bg-success py-5 mb-5 hero-header" style="background-image: url('/static/img/myback4.jpeg'); background-size: cover; background-position: center;">
                 <div class="container py-5">
                     <div class="row justify-content-start">
                         <div class="col-lg-8 text-center text-lg-start">
                             <h1 class="display-1 text-uppercase text-light mb-4">Welcome to</h1>
-                            <h1 class="text-uppercase text-white fw-bold mb-4">Yoriyori Cashew Shop</h1>
+                            <h1 class="text-uppercase text-white fw-bold mb-4">Yoriyorii Cashew Factory</h1>
                             <p class="fs-5 text-white mb-4">Your trusted source for natural, locally-grown, and premium cashew nuts—delivered fresh from our farm to your doorstep.</p>
                             <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-4">
                                 <a href="{% url 'shop' %}" class="btn btn-light text-success fw-bold py-md-3 px-md-5 me-4">Shop Now</a>
@@ -38,7 +38,7 @@
 
         <!-- Slide 2 -->
         <div class="carousel-item">
-            <div class="container-fluid bg-success py-5 mb-5 hero-header" style="background-image: url('/static/img/back2.jpg'); background-size: cover; background-position: center;">
+            <div class="container-fluid bg-success py-5 mb-5 hero-header" style="background-image: url('/static/img/myback3.jpg'); background-size: cover; background-position: center;">
                 <div class="container py-5">
                     <div class="row justify-content-start">
                         <div class="col-lg-8 text-center text-lg-start">
@@ -46,7 +46,7 @@
                             <h1 class="text-uppercase text-white fw-bold mb-4">Cashews Just For You</h1>
                             <p class="fs-5 text-white mb-4">Carefully harvested, perfectly packed, and delivered with love.</p>
                             <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-4">
-                                <a href="{% url 'shop' %}" class="btn btn-light text-success fw-bold py-md-3 px-md-5 me-4">Explore Now</a>
+                                <a href="{% url 'shop' %}" class="btn btn-light text-success fw-bold py-md-3 px-md-5 me-4">Explore our services</a>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
 
         <!-- Slide 3 -->
         <div class="carousel-item">
-            <div class="container-fluid bg-success py-5 mb-5 hero-header" style="background-image: url('/static/img/back3.jpg'); background-size: cover; background-position: center;">
+            <div class="container-fluid bg-success py-5 mb-5 hero-header" style="background-image: url('/static/img/background6.jpg'); background-size: cover; background-position: center;">
                 <div class="container py-5">
                     <div class="row justify-content-start">
                         <div class="col-lg-8 text-center text-lg-start">
@@ -117,10 +117,10 @@
                             <img src="{% static 'img/contact.jpg' %}" class="d-block w-100 rounded" alt="Cashew Factory">
                         </div>
                         <div class="carousel-item">
-                            <img src="{% static 'img/cashew1.jpg' %}" class="d-block w-100 rounded" alt="Cashew Product">
+                            <img src="{% static 'img/pic2.jpg' %}" class="d-block w-100 rounded" alt="Cashew Product">
                         </div>
                         <div class="carousel-item">
-                            <img src="{% static 'img/cashew2.jpg' %}" class="d-block w-100 rounded" alt="Cashew Processing">
+                            <img src="{% static 'img/background16.jpg' %}" class="d-block w-100 rounded" alt="Cashew Processing">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
@@ -135,7 +135,7 @@
             <div class="col-lg-6">
                 <h1 class="display-5 fw-bold text-dark mb-4">About Yoriyorii Cashew Factory</h1>
                 <p class="fs-5 text-muted mb-4">
-                    At Yoriyorii Cashew Shop, we’re passionate about delivering the highest quality cashew nuts from our farms straight to your doorstep. With a foundation built on sustainability, local empowerment, and premium quality, we stand at the forefront of the Nigerian cashew industry.
+                    At Yoriyorii Cashew factory, we’re passionate about delivering the highest quality cashew nuts from our farms straight to your doorstep. With a foundation built on sustainability, local empowerment, and premium quality, we stand at the forefront of the Nigerian cashew industry.
                 </p>
                 <p class="text-muted">
                     Our cashews are grown in the fertile regions of Nigeria and processed with cutting-edge techniques that ensure freshness, crunch, and natural goodness. From farm to factory to your home, every nut tells a story of care, culture, and community.
@@ -150,7 +150,7 @@
 <!-- Why Choose Us Start -->
 <div class="container-fluid py-5 bg-white">
     <div class="container text-center">
-        <h2 class="mb-4 fw-bold text-success">Why Choose Yoriyori Cashew?</h2>
+        <h2 class="mb-4 fw-bold text-success">Why Choose Yoriyorii Cashew?</h2>
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="card border-0 shadow-sm h-100">
@@ -175,7 +175,7 @@
                     <div class="card-body">
                         <i class="bi bi-truck fs-1 text-success mb-3"></i>
                         <h5 class="card-title">Nationwide Delivery</h5>
-                        <p class="card-text">Enjoy fast and reliable delivery anywhere in Nigeria. Our logistics team ensures freshness on arrival.</p>
+                        <p class="card-text">Enjoy fast and reliable delivery anywhere in the world. Our logistics team ensures freshness on arrival.</p>
                     </div>
                 </div>
             </div>
@@ -251,41 +251,5 @@
     </div>
     <!-- Products End -->
 
-
-<div class="container py-5">
-    <h2 class="mb-4 fw-bold text-success">Contact Us</h2>
-
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-success">{{ message }}</div>
-        {% endfor %}
-    {% endif %}
-
-    <form method="post">
-        {% csrf_token %}
-        <div class="mb-3">
-            <label class="form-label">Name</label>
-            {{ form.name }}
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Phone Number</label>
-            {{ form.phone }}
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Address</label>
-            {{ form.address }}
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Email</label>
-            {{ form.email }}
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Message</label>
-            {{ form.message }}
-        </div>
-        <button type="submit" class="btn btn-success">Send Message</button>
-    </form>
-</div>
-   
 
     {% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block content %}
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cashew Export Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <style>
+    .export-map img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Main Section -->
+  <section class="flex flex-col md:flex-row items-center justify-center p-6 md:p-12">
+    
+    <!-- Write-up -->
+    <div class="bg-green-100 text-gray-800 p-6 md:w-1/2 rounded-2xl shadow-lg mb-8 md:mb-0 md:mr-6">
+      <h1 class="text-3xl font-bold mb-4">Our Global Cashew Export</h1>
+      <p class="text-lg mb-2">
+        Yoriyorii Cashew is proud to be a leading exporter of premium quality cashew nuts from Nigeria.
+        Yoriyorii's distribution network is in Africa, Canada,America, Middle East & China. We work closely with our customers to understand their needs and develop customized solutions that meet their unique requirements. We are able to sell quantities even up to a pallet and able to handle all logistics till it is delivered to the doorstep of our customer's facilities. 
+        We are able to provide specialized banking practices that allow our customers to enjoy specific credit periods in their various domestic markets.
+      </p>
+      <p class="text-lg">
+        We have successfully shipped to multiple countries, ensuring quality and satisfaction at every step.
+        Our mission is to connect Africa’s finest agricultural products to global markets.
+      </p>
+    </div>
+
+    <!-- Image Slider -->
+    <div class="md:w-1/2 w-full max-w-md">
+      <div class="swiper mySwiper rounded-2xl shadow-lg">
+        <div class="swiper-wrapper">
+          <!-- Replace these with your cashew product images -->
+          <div class="swiper-slide"><img src="{% static 'img/ship.jpeg' %}" class="w-full rounded-2xl" /></div>
+          <div class="swiper-slide"><img src="{% static 'img/ship3.jpg' %}" class="w-full rounded-2xl" /></div>
+          <div class="swiper-slide"><img src="{% static 'img/ship2.jpg' %}" class="w-full rounded-2xl" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Export Map Section -->
+  <section class="p-10 text-center bg-white">
+  <h2 class="text-2xl font-bold mb-6">Countries We’ve Exported To</h2>
+  <div class="w-full max-w-5xl mx-auto">
+    <iframe
+      src="https://www.google.com/maps/d/u/0/edit?mid=18_OQMYmWeSiImXDjlSN44bDyTonHQZw&usp=sharing"
+      width="100%"
+      height="480"
+      class="rounded-xl shadow-lg border-2 border-gray-300"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    });
+  </script>
+</body>
+</html>
+
+
+{% endblock %}

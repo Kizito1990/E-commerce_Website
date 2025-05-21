@@ -1,0 +1,62 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+
+    
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yoriyorii Cashew - Sales Unit</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- WHOLESALE SECTION -->
+  <section class="bg-green-100 py-12 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
+      <!-- Image -->
+      <div class="w-full md:w-1/2">
+        <img src="{% static 'img/sale2.png' %}" 
+             alt="Wholesale Cashew" 
+             class="rounded-xl shadow-md w-full">
+      </div>
+      <!-- Text -->
+      <div class="w-full md:w-1/2">
+        <h2 class="text-3xl font-bold mb-4">Wholesale</h2>
+        <p class="text-lg leading-relaxed">
+          At Yoriyorii Cashew, we supply high-quality cashew nuts in large quantities for wholesalers, food processors, and exporters.
+          Our bulk cashew deliveries are meticulously sorted, graded, and packaged to meet international standards.
+          We serve both local and international buyers with reliable and timely logistics.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RETAIL SECTION -->
+  <section class="bg-green-100 py-12 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row-reverse items-center gap-8">
+      <!-- Image -->
+      <div class="w-full md:w-1/2">
+        <img src="{% static 'img/sales3.png' %}" 
+             alt="Retail Cashew" 
+             class="rounded-xl shadow-md w-full">
+      </div>
+      <!-- Text -->
+      <div class="w-full md:w-1/2">
+        <h2 class="text-3xl font-bold mb-4">Retail</h2>
+        <p class="text-lg leading-relaxed">
+          Our retail cashew packages are perfect for individual customers and small resellers. 
+          Each pack is carefully sealed for freshness, taste, and nutritional value. 
+          Whether you're buying for your kitchen, store, or as a gift, Yoriyorii Cashew delivers directly to your doorstep with love.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+
+{% endblock %}

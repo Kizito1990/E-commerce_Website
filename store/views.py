@@ -22,6 +22,7 @@ from .models import ContactMessage
 
 
 def index(request):
+
 	return render(request, 'store/index.html')	
 
 def search(request):
@@ -254,3 +255,19 @@ def contact_view(request):
     else:
         form = ContactForm()
     return render(request, 'store/contact.html', {'form': form})
+
+def export(request):
+    return render(request, 'store/export.html')
+
+
+
+def sales(request):
+    return render(request, 'store/sales.html' )
+
+def processing(request):
+    
+    return render(request, 'store/processing.html')
+
+def picture(request):
+    pictures = Picture.objects.all()
+    return render(request, 'store/picture.html', {'pictures': pictures})

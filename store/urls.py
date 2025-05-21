@@ -22,4 +22,7 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('admin_contact/', views.site_contact, name='admin_contact'),
     path('contact/', contact_view, name='contact'),
+    path('export/', views.export, name='export'),
+    path('sales/', views.sales, name='sales'),
+    path('processing/', views.processing, name='processing'),
 ]

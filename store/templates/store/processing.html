@@ -1,0 +1,81 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yoriyorii Cashew - Processing</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header Section -->
+  <header class="bg-green-700 text-white py-10 text-center">
+    <h1 class="text-4xl font-bold">Our Cashew Processing Journey</h1>
+    <p class="mt-2 text-lg">From farm to package — all done with care, locally.</p>
+  </header>
+
+  <!-- Processing Details Section -->
+  <section class="py-12 px-6 bg-green-50">
+    <div class="max-w-5xl mx-auto space-y-10">
+
+      <!-- Sourcing -->
+      <div>
+        <h2 class="text-2xl font-bold mb-3">🌱 Sourced from Nigerian Heartlands</h2>
+        <p class="text-lg leading-relaxed">
+          At Yoriyorii Cashew, our raw cashew nuts are carefully sourced from local farmers in <strong>Edo</strong>, <strong>Enugu</strong>, 
+          <strong>Nassarawa</strong>, and <strong>Abuja</strong>. These regions are known for their fertile soil and cashew-friendly climate, 
+          providing the perfect environment for high-quality yields.
+        </p>
+      </div>
+
+      <!-- Processing -->
+      <div>
+        <h2 class="text-2xl font-bold mb-3">⚙️ Local Processing</h2>
+        <p class="text-lg leading-relaxed">
+          Once harvested, the cashew nuts are transported to our local processing facility where they undergo cleaning, 
+          shelling, drying, and roasting using hygienic and modern methods. We ensure quality at every step to preserve 
+          taste, texture, and nutritional value.
+        </p>
+      </div>
+
+      <!-- Packaging -->
+      <div>
+        <h2 class="text-2xl font-bold mb-3">📦 Packaging & Labelling</h2>
+        <p class="text-lg leading-relaxed">
+          After processing, the cashews are hygienically packed in air-tight, food-grade packaging. 
+          Each pack is carefully <strong>labelled locally</strong> with nutritional information and a stamp of freshness. 
+          We take pride in offering clean, traceable, and export-ready cashew products made in Nigeria.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Image Section -->
+  <section class="py-10 bg-white">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 px-4">
+      <img src="{% static 'img/pro1.jpg' %}" alt="Cashew Farm" class="rounded-lg shadow">
+      <img src="{% static 'img/slide4.jpg' %}" alt="Processing" class="rounded-lg shadow">
+      <img src="{% static 'img/sale2.png' %}" alt="Packaged Cashews" class="rounded-lg shadow">
+    </div>
+  </section>
+
+  <!-- Watch Video Link -->
+  <section class="py-8 bg-green-100 text-center">
+    <a 
+      href="{% url 'video' %}" 
+      class="inline-block px-6 py-3 bg-green-700 text-white text-lg font-semibold rounded-full shadow hover:bg-green-800 transition"
+      target="_blank" rel="noopener noreferrer">
+      Watch Us Process It
+    </a>
+  </section>
+
+</body>
+</html>
+
+{% endblock %}
